@@ -1,14 +1,25 @@
 import React from 'react';
-
+import styled from 'styled-components';
 class ProductRow extends React.Component {
     render() {
-      const products = this.props.product.map((product,index)=>{return (<tr><td key={index}>{product.name}</td> <td key={index}>{product.price}</td></tr>)})
-     /*  const productsPrice = this.props.product.map((product,index)=>{return ()}) */
-    return (
-      <tbody>
-        {products}
-      </tbody>
-    );
+      const NoStock = styled.td`
+        color: red;
+      `;
+    const products = this.props.product.map((product, index) => {
+      return product.stocked ? (
+        <tr key={index}>
+          <td>{product.name}</td>
+          <td>{product.price}</td>
+        </tr>
+      ) : (
+        <tr key={index}>
+          <NoStock>{product.name}</NoStock>
+          <NoStock>{product.price}</NoStock>
+        </tr>
+      );
+    });
+
+    return <tbody>{products}</tbody>;
   }
 }
 
