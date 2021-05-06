@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
     
       return (
        <form>
-        <input type="text" placeholder="Search..."/>
+        <input type="text" placeholder="Search..." onChange={(event)=>(this.props.filterFunction(event))}/>
        </form>
       );
     };

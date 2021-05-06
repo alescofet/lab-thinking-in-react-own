@@ -2,17 +2,12 @@ import React from 'react';
 
 class ProductRow extends React.Component {
     render() {
-      const productsName = this.props.product.map((product,index)=>{return (<tr key={index}>{product.name}</tr>)})
-      const productsPrice = this.props.product.map((product,index)=>{return (<tr key={index}>{product.price}</tr>)})
+      const products = this.props.product.map((product,index)=>{return (<tr><td key={index}>{product.name}</td> <td key={index}>{product.price}</td></tr>)})
+     /*  const productsPrice = this.props.product.map((product,index)=>{return ()}) */
     return (
-      <div>
-        <th>
-        {productsName}
-        </th>
-        <th>
-        {productsPrice}
-        </th>
-      </div>
+      <tbody>
+        {products}
+      </tbody>
     );
   }
 }

@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.productTable{
+  margin: 0 auto;
+  border: solid 1px black;
+  margin-top: 3rem;
+}
